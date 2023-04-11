@@ -4,6 +4,7 @@ from bdd.connexionBDD import connexion
 from data import getInfo
 from bdd.Model import Article
 from tqdm import tqdm
+import logging
 
 
 def scrapping():
@@ -15,6 +16,7 @@ def scrapping():
 
     listArticles = []
 
+    logging.info('Début du scrapping')
     for i in range(0, 3):
         # On enregistre le code HTML complet de la page pour récupérer la div contenant les articles
         url = f"https://pubmed.ncbi.nlm.nih.gov/?term=lung+cancer&sort=date&page={i+1}"
@@ -29,4 +31,7 @@ def scrapping():
         for unArticle in tqdm(articles, desc='article scrapper', unit='article', maxinterval=100):
             article = getInfo(unArticle)
             listArticles.append(article)
+        logging.info('Fin du Scrapping')
+    logging.info('Début de l\'enregistrement')
     connexion(listArticles)
+    logging.info('Fin de l\'enregistrement')

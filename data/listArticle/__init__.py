@@ -6,8 +6,8 @@ from .getTitre import (
     getTitre
 )
 
-from .getAuteur import (
-    getAuteur
+from .getAuteurs import (
+    getAuteurs
 )
 
 from .getPmid import (

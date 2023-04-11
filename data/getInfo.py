@@ -3,7 +3,7 @@ import requests
 
 from .listArticle import (
     getTitre,
-    getAuteur,
+    getAuteurs,
     getPmid,
     getResume,
     isArticleFree,
@@ -40,7 +40,7 @@ def getInfo(article):
     titre = getTitre(article)
 
     # Le ou les auteur(s)
-    auteur = getAuteur(article)
+    auteurs = getAuteurs(article)
 
     # Le PMID de l'article
     pmid = getPmid(article)
@@ -76,4 +76,4 @@ def getInfo(article):
     # L'ImpactFactor
     impactFactor = getIF(articleDetail)
 
-    return [titre, auteur, resume, keyWords, citation, nbRef, pmid, doi, articleType, free, journalName, impactFactor]
+    return [titre, auteurs, resume, keyWords, citation, nbRef, pmid, doi, articleType, free, journalName, impactFactor]

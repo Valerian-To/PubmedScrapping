@@ -1,0 +1,5 @@
+
+
+from .getNameJournal import (
+    getNameJournal
+)

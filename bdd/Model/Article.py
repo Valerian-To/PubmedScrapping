@@ -3,6 +3,7 @@ from sqlalchemy import (
     Column,
     String,
     Integer,
+    BOOLEAN
 )
 from sqlalchemy.dialects.mysql import LONGTEXT
 from sqlalchemy.orm import relationship
@@ -22,7 +23,7 @@ class Article(Base):
     pmid = Column('pmid', String(255))
     doi = Column('doi', String(255))
     type = Column('type', String(255))
-    isFree = Column('gratuit', String(255))
+    isFree = Column('gratuit', BOOLEAN)
     journals = relationship('Journal', secondary=association_table, back_populates='articles')
 
     def __repr__(self):

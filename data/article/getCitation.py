@@ -14,8 +14,8 @@ def getCitation(articleDetail):
     """
     try:
         nameJournal = articleDetail.find('button', class_='journal-actions-trigger trigger')['title']
-        date = articleDetail.find('div', class_="cit").text.strip()
-        doi = articleDetail.find('span', class_='citation-doi')
+        date = articleDetail.find('span', class_="cit").text.strip()
+        doi = articleDetail.find('span', class_='citation-doi').text.strip()
         citation = nameJournal + ' ' + date + ' ' + doi
     except AttributeError:
         citation = "null"

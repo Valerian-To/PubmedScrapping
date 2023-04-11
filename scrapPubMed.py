@@ -19,7 +19,7 @@ def scrapping():
     logging.info('Début du scrapping')
     for i in range(0, 3):
         # On enregistre le code HTML complet de la page pour récupérer la div contenant les articles
-        url = f"https://pubmed.ncbi.nlm.nih.gov/?term=lung+cancer&sort=date&page={i+1}"
+        url = f"https://pubmed.ncbi.nlm.nih.gov/?term=lung+cancer&page={i+1}"
         page = requests.get(url)
         soup = BeautifulSoup(page.content, "html.parser")
         div = soup.find('div', class_='search-results-chunk results-chunk')

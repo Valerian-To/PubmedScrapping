@@ -10,11 +10,11 @@ def isArticleFree(article):
     Args :
         article : l'article à analyser
 
-    Returns : free (str) : retourne la chaine 'oui' si l'article est gratuit, sinon retourne 'non'
+    Returns : free (boolean) : retourne True si l'article est gratuit, sinon False
     """
     try:
         free = article.find("span", class_="free-resources spaced-citation-item citation-part").text.strip()
-        free = "Oui"
+        free = True
     except AttributeError:
-        free = "Non"
+        free = False
     return free
